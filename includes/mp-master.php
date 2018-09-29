@@ -22,6 +22,7 @@ class MP_Master {
 	
 	/*Pruebas con ajax*/
 	protected $ajax;
+	protected $hearbeat;
     
     public function __construct() {
         
@@ -52,6 +53,7 @@ class MP_Master {
         require_once $this->plugin_dir_path . 'mp-ejemplos.php';
 		
         require_once $this->plugin_dir_path . 'mp-ajax.php';
+        require_once $this->plugin_dir_path . 'mp-hearbeat.php';
         
         $this->cargador = new MP_cargador;
         $this->admin = new MP_Admin($this->version);
@@ -71,6 +73,7 @@ class MP_Master {
 		$this->ejemplos= new MP_Ejemplos;
 		
 		$this->ajax= new MP_Ajax;
+		$this->heartbeat= new MP_Hearbeat;
 
         
     }
@@ -126,8 +129,15 @@ class MP_Master {
 		$this->cargador->add_action( 'print_page_mp_pruebas', $this->ejemplos, 'imprimir' );
 		/*Cargando un ajax*/
 		$this->cargador->add_action( 'wp_ajax_mipeticion', $this->ajax, 'peticion' );
-	
-        
+		$this->cargador->add_action( 'wp_ajax_usersocial', $this->ajax, 'user_social' );
+		
+		//para poder utilizar ajax del frontend se agrega una palabra extra antes de la accion _nopriv_ ejemplo abajo inidica que no tiene privilegios para usar ajax y sin logearte puedas tener interaccion ajax
+		$this->cargador->add_action( 'wp_ajax_nopriv_mipeticion', $this->ajax, 'peticion' );
+		$this->cargador->add_action( 'wp_ajax_nopriv_usersocial', $this->ajax, 'user_social' );
+		
+		//Agrado de los filtros
+		$this->cargador->add_filter( 'hearbeat_received', $this->heartbeat, 'recibir_responder' );
+		
     }
     
     public function run() {

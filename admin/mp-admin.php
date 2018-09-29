@@ -28,7 +28,7 @@ class MP_Admin {
     
     public function enqueue_scripts( $hook ) {
                 
-        if( $hook != 'toplevel_page_mp_pruebas' ) {
+        if( $hook != 'toplevel_page_mp_pruebas' && $hook != 'toplevel_page_user_social' ) {
             return;
         }
         

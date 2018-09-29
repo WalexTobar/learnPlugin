@@ -44,7 +44,10 @@ class MP_Menu_Usersocial {
 							<p class='description'>Seleciona el usuario para cambiarle las redes sociales</p>                    
 						</td>
 					</tr>
-					
+					<tr>
+						<th><hr></th>
+						<td><hr></td>
+					</tr>
 					<tr class='form-required user-facebook-wrap'>
 						<th scope='row'><label for='facebook'>Facebook</label></th>
 						<td>
@@ -70,6 +73,8 @@ class MP_Menu_Usersocial {
 					</tr>                            
 
 				</table>
+				<br>
+				<button id='guardar' class='button-primary'>Guardar</button>
 			";
 
         	echo $output;

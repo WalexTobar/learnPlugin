@@ -3,16 +3,23 @@
 class MP_Cargador {
     
     protected $actions;
-    
+    protected $filters;
+	
     public function __construct() {
         
         $this->actions = [];
-        
+        $this->filters =[];
     }
     
     public function add_action( $hook, $component, $callback, $priority = 10, $accepted_args = 1 ) {
         
         $this->actions = $this->add( $this->actions, $hook, $component, $callback, $priority, $accepted_args );
+        
+    }
+	/*filtro*/
+	 public function add_filter( $hook, $component, $callback, $priority = 10, $accepted_args = 1 ) {
+        
+        $this->filters = $this->add( $this->filters, $hook, $component, $callback, $priority, $accepted_args );
         
     }
     
@@ -37,6 +44,13 @@ class MP_Cargador {
             extract( $hook_u, EXTR_OVERWRITE );
             
             add_action( $hook, [ $component, $callback ], $priority, $accepted_args );
+            
+        }
+		foreach( $this->filters as $hook_u ) {
+            
+            extract( $hook_u, EXTR_OVERWRITE );
+            
+            add_filter( $hook, [ $component, $callback ], $priority, $accepted_args );
             
         }
         
