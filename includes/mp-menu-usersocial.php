@@ -70,11 +70,24 @@ class MP_Menu_Usersocial {
 							<input class='regular-text' type='text' name='mp_social[instagram]' id='instagram' size='40' value='$instagram'>
 							<p class='description'>Agregar la url de Instagram</p>
 						</td>
+					</tr> 
+					
+					<tr class='form-required user-heartbeat-wrap'>
+						<th scope='row'><label for='heartbeat'>Heartbeat Title</label></th>
+						<td>
+							<input class='regular-text' type='text' name=' ' id='mp-heartbeat' size='40' value=' '>
+							<p class='description'>Heartbeat a mostrar</p>
+						</td>
 					</tr>                            
 
 				</table>
 				<br>
 				<button id='guardar' class='button-primary'>Guardar</button>
+				<br>
+				<br>
+				<br>
+				<hr>
+				<h2 id='heartbeat-title'>$mp_text</h2><br><br><br>
 			";
 
         	echo $output;

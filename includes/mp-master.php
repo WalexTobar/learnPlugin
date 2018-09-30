@@ -23,6 +23,8 @@ class MP_Master {
 	/*Pruebas con ajax*/
 	protected $ajax;
 	protected $hearbeat;
+	
+	protected $online;//usamos para instanciar una clases que contiene metodos para almacenar el estado login o logout
     
     public function __construct() {
         
@@ -54,6 +56,7 @@ class MP_Master {
 		
         require_once $this->plugin_dir_path . 'mp-ajax.php';
         require_once $this->plugin_dir_path . 'mp-hearbeat.php';
+        require_once $this->plugin_dir_path . 'mp-online.php';
         
         $this->cargador = new MP_cargador;
         $this->admin = new MP_Admin($this->version);
@@ -74,6 +77,8 @@ class MP_Master {
 		
 		$this->ajax= new MP_Ajax;
 		$this->heartbeat= new MP_Hearbeat;
+		
+		$this->online= new MP_Online;
 
         
     }
@@ -136,8 +141,13 @@ class MP_Master {
 		$this->cargador->add_action( 'wp_ajax_nopriv_usersocial', $this->ajax, 'user_social' );
 		
 		//Agrado de los filtros
-		$this->cargador->add_filter( 'hearbeat_received', $this->heartbeat, 'recibir_responder' );
+		$this->cargador->add_filter( 'heartbeat_received', $this->heartbeat, 'recibir_responder', 10, 3 );
 		
+		//agregar estados del user hook login y logout
+		$this->cargador->add_action( 'wp_login', $this->online, 'conectado', 10, 2 );
+		$this->cargador->add_action( 'wp_logout', $this->online, 'desconectado');
+		
+		$this->cargador->add_filter( 'heartbeat_received', $this->heartbeat, 'notificacion', 10, 3 );
     }
     
     public function run() {
