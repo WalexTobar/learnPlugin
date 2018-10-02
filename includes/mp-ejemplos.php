@@ -123,7 +123,7 @@ class MP_Ejemplos{
 		//delete_transient('user_wordpress');
 			var_dump($github_userinfo_wordpress);
 */
-		echo "
+/*		echo "
 		<table class='form-table'>
 			<thead></thead>
 			<tbody>
@@ -132,7 +132,73 @@ class MP_Ejemplos{
 				</tr>
 			</tbody>
 		</table>
-		<button class='peticion button primary'>Enviar petición AJAX</button>";
+		<button class='peticion button primary'>Enviar petición AJAX</button><br><br>";
+			$args = [
+			'arg1' =>150,
+			'arg2' =>250	
+		];
+	echo "<pre>";
+		 var_dump(wp_next_scheduled( 'mp_cron', $args));
+	echo "\n";
+	echo "\n";
+		echo wp_get_schedule('mp_cron', $args);//para obtener la recurrencia especifica	
+	echo "\n";
+	echo "\n";
+		var_dump(wp_get_schedules());
+		
+	echo "\n";
+		var_dump(_get_cron_array());//obteneres info relevante a todas las tares programadas en word press
+	echo "</pre>";*/
+	echo "<br><pre>";
+	__('Mi Ciudad es Bogota', 'miprimerplugin');//solo retorna la traduccion
+	_e('Mi Ciudad es Bogota', 'miprimerplugin');//solo retorna la traduccion
+	//por seguridad al pasar variables
+		echo "\n";
+	$ciudad = "Bogotá";
+	$ciudad2 = "Cali";
+	sprintf(__('Mi Ciudad es %s', 'miprimerplugin'), 
+			$ciudad);//solo retorna  el valor y no se emprime	
+		
+	printf(
+			__('Mi Ciudad es %2$s y %1$s', 'miprimerplugin'), 
+			$ciudad,
+			$ciudad2
+		);
+	;
+	
+	echo "</pre><br><br>";	
+	
+	echo "<pre>";
+        //$conteo = 5;
+	   //modificacion referente a numeros para pluralizar texto
+       /* printf(_n(
+            '%s mensaje',
+            '%s mensajes',
+            $conteo,
+            'miprimerplugin'          
+          ),$conteo);*/
+/*	   $mensajes_plural = _n_noop('%s mensaje', '%s mensajes');
+        
+        printf(
+            translate_nooped_plural(
+                $mensajes_plural,
+                $conteo,
+                'miprimerplugin'
+            ),
+            $conteo
+        );*/
+        //funciones para desambiguar por contexto
+        //750
+        _e('Post link', 'mi primer plugin');
+        //1350
+        _e('Post link', 'mi primer plugin');
+        //750
+        _ex('Post link','A link to the post', 'mi primer plugin');
+        //1350
+        _ex('Post link','Submit a link', 'mi primer plugin');
+	echo "</pre>";
+	
+		echo dirname( __FILE__ ) . '/src/wp-includes/pomo';
 	}
 }
 ?>

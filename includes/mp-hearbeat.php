@@ -24,13 +24,16 @@ class MP_Hearbeat{
 		return $response;
 	}
 	/*validamos y enviamos los datos al al frotend*/
+	
 	public function notificacion($response, $data, $screen_id){
 		
 		if(! empty($data['mp_notificacion']) && isset($data['mp_notificacion'])){
+			
 			extract($data, EXTR_OVERWRITE);
-			$current_user_id = (int)$current_user_id['current_user_id'];
+			
+			$current_user_id = (int)$mp_notificacion['current_user_id'];
 			$actualizado = $mp_notificacion['actualizado'];
-			$user_update_id = (int)$current_user_id['user_update'];
+			$user_update_id = (int)$mp_notificacion['user_update'];
 			
 			//verificando que actualizado sea true para agregar la notificacion
 			//a los usarios administradores en la base de datos
@@ -39,9 +42,10 @@ class MP_Hearbeat{
 					'meta_key' 	=>'mp_online',
 					'exclude' 	=> [
 						$current_user_id
-					],
+					]
 						
 				];
+				
 				$usuarios = get_users($args);
 				foreach($usuarios as $usuario){
 					if($usuario->mp_online == 'true'){
@@ -54,6 +58,7 @@ class MP_Hearbeat{
 						update_user_meta($usuario->ID, 'mp_notificacion', $datos);
 					}
 				}
+				
 			}elseif($actualizado == 'false'){
 				$current_user = new WP_User($current_user_id);
 				if($current_user->has_prop('mp_notificacion')){
@@ -77,11 +82,9 @@ class MP_Hearbeat{
 						];
 						update_user_meta($current_user_id, 'mp_notificacion', $datos);
 					}else{
-						$response['mp_notificacion
-						'] = 'false';
+						$response['mp_notificacion'] = 'false';
 					}
-				}
-				
+				}	
 			}
 		}
 		return $response;

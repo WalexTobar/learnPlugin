@@ -13,9 +13,9 @@ class MP_Menu_Pruebas {
     
     public function options_page() {
         
-        $this->build_menupage->add_menu_page( 'MP Pruebas', 'MP Pruebas', 'manage_options', 'mp_pruebas', [$this, 'page_display_principal'], plugin_dir_url(__DIR__) . 'img/bezier-20-wp.svg', 15 );
+        $this->build_menupage->add_menu_page( 'MP Pruebas', __('MP Pruebas', 'miprimerplugin'), 'manage_options', 'mp_pruebas', [$this, 'page_display_principal'], plugin_dir_url(__DIR__) . 'img/bezier-20-wp.svg', 15 );
         
-        $this->build_menupage->add_submenu_page( 'mp_pruebas', 'Configuración', 'Configuración', 'manage_options', 'config_mp_pruebas', [$this, 'page_display_configuracion'] );
+        $this->build_menupage->add_submenu_page( 'mp_pruebas', __('Configuración', 'miprimerplugin'),  __('Configuración', 'miprimerplugin'), 'manage_options', 'config_mp_pruebas', [$this, 'page_display_configuracion'] );
         
         $this->build_menupage->run();
         
@@ -36,7 +36,7 @@ class MP_Menu_Pruebas {
                  add_settings_error(
                      'mp_pruebas',
                      'mp_pruebas',
-                     'Esta configuración se ha guradado correctamente',
+                     __('Esta configuración se ha guradado correctamente', 'miprimerplugin'),
                      'updated'
                  );
                  
@@ -56,7 +56,7 @@ class MP_Menu_Pruebas {
              
              echo "</form>";
              
-             echo "<button id='mpboton' class='button button-primary'>Ejecutar alerta</button>";
+                 echo "<button id='mpboton' class='button button-primary'>".__('Ejecutar Alerta', 'miprimerplugin')."</button>";
              
          }
         
@@ -77,7 +77,7 @@ class MP_Menu_Pruebas {
             
         }
         
-        $titulo = apply_filters( 'mp_change_title', 'Configuración de PLugin MP Pruebas' );
+        $titulo = apply_filters( 'mp_change_title', __('Configuración de Plugin MP Pruebas', 'miprimerplugin') );
         
         ?>
         
@@ -103,7 +103,7 @@ class MP_Menu_Pruebas {
         <?php else: ?>
         
         <p>
-            No tienes acceso a esta sección
+            <?= __('No tienes acceso a esta sección', 'miprimerplugin');?>
         </p>
         
         <?php endif; ?>

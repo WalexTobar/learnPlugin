@@ -1,0 +1,192 @@
+# Copyright (C) 2018 Gilbert Rodríguez
+# This file is distributed under the GPL2.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mi primer plugin (clase) 1.0\n"
+"Report-Msgid-Bugs-To: http://ulrich.pogson.ch/contact-me\n"
+"POT-Creation-Date: 2018-10-02 00:42:22+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Wilber Tobar <ale_tobar@hotmail.es>\n"
+"Language-Team: Wilber Tobar <ale_tobar@hotmail.es>\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: EL SALVADOR\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x;esc_html_e;esc_html__;esc_attr_e;esc_attr__;_ex:1,2c;_nx:4c,1,2;_"
+"nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2;"
+"\n"
+"X-Textdomain-Support: yes\n"
+
+#: admin/mp-admin.php:58
+msgid "Ha guardado con éxito las redes sociales: "
+msgstr ""
+
+#: admin/mp-admin.php:59
+msgid "Ha ocurrido un error al guardar los datos "
+msgstr ""
+
+#: includes/mp-cpt.php:7
+msgid "Carros"
+msgstr ""
+
+#: includes/mp-cpt.php:8
+msgid "Carro"
+msgstr ""
+
+#: includes/mp-cpt.php:9 includes/mp-cpt.php:41
+msgid "Agregar nuevo"
+msgstr ""
+
+#: includes/mp-cpt.php:10
+msgid "Agregar nuevo carro"
+msgstr ""
+
+#: includes/mp-cpt.php:11
+msgid "Editar carros"
+msgstr ""
+
+#: includes/mp-cpt.php:12
+msgid "Ver carros"
+msgstr ""
+
+#: includes/mp-cpt.php:13
+msgid "Imagen de portada carros"
+msgstr ""
+
+#: includes/mp-cpt.php:14
+msgid "Definir portada carro"
+msgstr ""
+
+#: includes/mp-cpt.php:15
+msgid "Remover imagen del carro"
+msgstr ""
+
+#: includes/mp-cpt.php:16
+msgid "Usar como imagen de carro"
+msgstr ""
+
+#: includes/mp-cpt.php:39
+msgid "Productos"
+msgstr ""
+
+#: includes/mp-cpt.php:40
+msgid "Producto"
+msgstr ""
+
+#: includes/mp-cpt.php:42
+msgid "Agregar nuevo producto"
+msgstr ""
+
+#: includes/mp-cpt.php:43
+msgid "Editar productos"
+msgstr ""
+
+#: includes/mp-cpt.php:44
+msgid "Ver productos"
+msgstr ""
+
+#: includes/mp-cpt.php:45
+msgid "Imagen de portada productos"
+msgstr ""
+
+#: includes/mp-cpt.php:46
+msgid "Definir portada producto"
+msgstr ""
+
+#: includes/mp-cpt.php:47
+msgid "Remover imagen del producto"
+msgstr ""
+
+#: includes/mp-cpt.php:48
+msgid "Usar como imagen de producto"
+msgstr ""
+
+#: includes/mp-ejemplos.php:153 includes/mp-ejemplos.php:154
+msgid "Mi Ciudad es Bogota"
+msgstr ""
+
+#: includes/mp-ejemplos.php:159
+msgid "Mi Ciudad es %s"
+msgstr ""
+
+#: includes/mp-ejemplos.php:163
+msgid "Mi Ciudad es %2$s y %1$s"
+msgstr ""
+
+#: includes/mp-ejemplos.php:192 includes/mp-ejemplos.php:194
+msgid "Post link"
+msgstr ""
+
+#: includes/mp-menu-pruebas.php:16
+msgid "MP Pruebas"
+msgstr ""
+
+#: includes/mp-menu-pruebas.php:18
+msgid "Configuración"
+msgstr ""
+
+#: includes/mp-menu-pruebas.php:39
+msgid "Esta configuración se ha guradado correctamente"
+msgstr ""
+
+#: includes/mp-menu-pruebas.php:59
+msgid "Ejecutar Alerta"
+msgstr ""
+
+#: includes/mp-menu-pruebas.php:80
+msgid "Configuración de Plugin MP Pruebas"
+msgstr ""
+
+#: includes/mp-menu-pruebas.php:106
+msgid "No tienes acceso a esta sección"
+msgstr ""
+
+#: includes/mp-menu-usersocial.php:16
+msgid "User Social"
+msgstr ""
+
+#: includes/mp-menu-usersocial.php:44
+msgid "Seleciona el usuario para cambiarle las redes sociales"
+msgstr ""
+
+#: includes/mp-widgets.php:17
+msgid "Mi Widget Personalizado"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Mi primer plugin (clase)"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "Http://miprimerplugin.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Este es mi primer plugin que va a cambiar los títulos de cada entrada de un "
+"blog o categoría"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Gilbert Rodríguez"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://miurlpersonal.com"
+msgstr ""
+
+#: includes/mp-ejemplos.php:196
+msgctxt "A link to the post"
+msgid "Post link"
+msgstr ""
+
+#: includes/mp-ejemplos.php:198
+msgctxt "Submit a link"
+msgid "Post link"
+msgstr ""

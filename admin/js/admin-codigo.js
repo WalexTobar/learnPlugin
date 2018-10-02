@@ -70,14 +70,14 @@ jQuery(document).ready(function($){
 					$.notify({
 						icon	: 'glyphicon glyphicon-exclamation-sign',
 						title	: 'Guardado',
-						message	: 'Ha guardado con exito las redes sociales de User: ' + data.usuario
+						message	: traductor.guardaredes.exito + data.usuario
 					},{//se agraga otro objeto como segundo parametro para indicar la poscion, animation
 						placement:{
 							from	:'top',
 							align	:'right'
 						},
 						type: 'success',
-						delay: 4000,
+						delaye: 4000,
 						z_index: 9999999
 						
 					});
@@ -86,20 +86,22 @@ jQuery(document).ready(function($){
 						'current_user_id'	: mp_objeto.current_user_id,
 						'user_update' 		: $usuario.val()
 					};
+					
 					wp.heartbeat.enqueue('mp_notificacion', datos, false);
+				
 				}else if(data.resultado == 'error'){
 					/*alert('Ha ocurrido un error al guardar los datos');*/
 					$.notify({
 						icon	: 'glyphicon glyphicon-ok',
 						title	: 'Error',
-						message	: 'Ha ocurrido un error al guardar los datos'
+						message	: traductor.guardaredes.error
 					},{//se agraga otro objeto como segundo parametro para indicar la poscion, animation
 						placement:{
 							from	:'top',
 							align	:'right'
 						},
 						type: 'danger',
-						delay: 4000,
+						delaye: 4000,
 						z_index: 9999999
 						
 					});
@@ -107,6 +109,9 @@ jQuery(document).ready(function($){
 			}
 		})
 	});
+	
+	
+	console.log(mp_objeto.current_user_id);
 //vamos a ajustar el intervalo en que se va a producir el heartbeat
 	wp.heartbeat.interval('fast');//->es igual a 5 segundos, al agregatr fast
 	//Hertbeat 
@@ -132,7 +137,7 @@ jQuery(document).ready(function($){
 		/*hace un solo envio al servidor*/
 		wp.heartbeat.enqueue('mp_heartbeat', datos, false);
 	});
-	console.log(mp_objeto.current_user_id);
+
 	$( document )
 /*		.on( 'heartbeat-tick.mp', function(e, data){
 			//recibir la respuesta de la base de datps
@@ -168,11 +173,11 @@ jQuery(document).ready(function($){
 						type: 'minimalist',
 						delaye: 4000,
 						icon_type: 'image',
-						template:'<div data-notify="container" class="col-xs-11 col-sm-8col-md-3 alert-{0}" role="alert">'+
+						template:'<div data-notify="container" class="col-xs-11 col-sm-8 col-md-3 alert alert-{0}" role="alert">'+
 									'<img data-notify="icon" class="img-circle pull-left">'+
 									'<span data-notify="title">{1}</span>'+
 									'<span data-notify="message">{2}</span>'+
-							 	'</div>', 
+							 	'</div>',  
 						z_index: 9999999
 						
 					});

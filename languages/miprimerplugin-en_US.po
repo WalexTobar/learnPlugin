@@ -1,0 +1,191 @@
+# Copyright (C) 2018 Gilbert Rodríguez
+# This file is distributed under the GPL2.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mi primer plugin (clase) 1.0\n"
+"Report-Msgid-Bugs-To: http://ulrich.pogson.ch/contact-me\n"
+"POT-Creation-Date: 2018-10-02 00:42:22+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-10-01 19:44-0600\n"
+"Language-Team: Wilber Tobar <ale_tobar@hotmail.es>\n"
+"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;_x;esc_html_e;esc_html__;esc_attr_e;esc_attr__;"
+"_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;"
+"__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"Last-Translator: \n"
+"Language: en_US\n"
+
+#: admin/mp-admin.php:58
+msgid "Ha guardado con éxito las redes sociales: "
+msgstr "has successfully saved social networks:"
+
+#: admin/mp-admin.php:59
+msgid "Ha ocurrido un error al guardar los datos "
+msgstr "An error occurred while saving data"
+
+#: includes/mp-cpt.php:7
+msgid "Carros"
+msgstr "Cars"
+
+#: includes/mp-cpt.php:8
+msgid "Carro"
+msgstr "Car"
+
+#: includes/mp-cpt.php:9 includes/mp-cpt.php:41
+msgid "Agregar nuevo"
+msgstr "Add new"
+
+#: includes/mp-cpt.php:10
+msgid "Agregar nuevo carro"
+msgstr "Add new car"
+
+#: includes/mp-cpt.php:11
+msgid "Editar carros"
+msgstr "Update car"
+
+#: includes/mp-cpt.php:12
+msgid "Ver carros"
+msgstr "View cars"
+
+#: includes/mp-cpt.php:13
+msgid "Imagen de portada carros"
+msgstr "Picture of cover Carts"
+
+#: includes/mp-cpt.php:14
+msgid "Definir portada carro"
+msgstr "define car cover image"
+
+#: includes/mp-cpt.php:15
+msgid "Remover imagen del carro"
+msgstr "Remove image from Car"
+
+#: includes/mp-cpt.php:16
+msgid "Usar como imagen de carro"
+msgstr "Use as a cart image"
+
+#: includes/mp-cpt.php:39
+msgid "Productos"
+msgstr "Products"
+
+#: includes/mp-cpt.php:40
+msgid "Producto"
+msgstr "Product"
+
+#: includes/mp-cpt.php:42
+msgid "Agregar nuevo producto"
+msgstr "Add new product"
+
+#: includes/mp-cpt.php:43
+msgid "Editar productos"
+msgstr "Update Product"
+
+#: includes/mp-cpt.php:44
+msgid "Ver productos"
+msgstr "Show products"
+
+#: includes/mp-cpt.php:45
+msgid "Imagen de portada productos"
+msgstr "Define product cover image"
+
+#: includes/mp-cpt.php:46
+msgid "Definir portada producto"
+msgstr "Define product cover"
+
+#: includes/mp-cpt.php:47
+msgid "Remover imagen del producto"
+msgstr "Remove product image"
+
+#: includes/mp-cpt.php:48
+msgid "Usar como imagen de producto"
+msgstr "Use as a product image"
+
+#: includes/mp-ejemplos.php:153 includes/mp-ejemplos.php:154
+msgid "Mi Ciudad es Bogota"
+msgstr "My city is Bogota"
+
+#: includes/mp-ejemplos.php:159
+msgid "Mi Ciudad es %s"
+msgstr "My City is"
+
+#: includes/mp-ejemplos.php:163
+msgid "Mi Ciudad es %2$s y %1$s"
+msgstr "Mi City is %2$s and %1$s "
+
+#: includes/mp-ejemplos.php:192 includes/mp-ejemplos.php:194
+msgid "Post link"
+msgstr "Enviar link"
+
+#: includes/mp-menu-pruebas.php:16
+msgid "MP Pruebas"
+msgstr "MP Test"
+
+#: includes/mp-menu-pruebas.php:18
+msgid "Configuración"
+msgstr "Settings"
+
+#: includes/mp-menu-pruebas.php:39
+msgid "Esta configuración se ha guradado correctamente"
+msgstr "This configuration has been guradado correctly"
+
+#: includes/mp-menu-pruebas.php:59
+msgid "Ejecutar Alerta"
+msgstr "Alert"
+
+#: includes/mp-menu-pruebas.php:80
+msgid "Configuración de Plugin MP Pruebas"
+msgstr "Configuring MP Plugin Testing"
+
+#: includes/mp-menu-pruebas.php:106
+msgid "No tienes acceso a esta sección"
+msgstr "You don't have access to this section"
+
+#: includes/mp-menu-usersocial.php:16
+msgid "User Social"
+msgstr "Social Networks"
+
+#: includes/mp-menu-usersocial.php:44
+msgid "Seleciona el usuario para cambiarle las redes sociales"
+msgstr "Select the user to change social networks"
+
+#: includes/mp-widgets.php:17
+msgid "Mi Widget Personalizado"
+msgstr "My custom Widget"
+
+#. Plugin Name of the plugin/theme
+msgid "Mi primer plugin (clase)"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "Http://miprimerplugin.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Este es mi primer plugin que va a cambiar los títulos de cada entrada de un "
+"blog o categoría"
+msgstr ""
+"This my first plugin , this chancce tittle every entry of blog or category"
+
+#. Author of the plugin/theme
+msgid "Gilbert Rodríguez"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://miurlpersonal.com"
+msgstr ""
+
+#: includes/mp-ejemplos.php:196
+msgctxt "A link to the post"
+msgid "Post link"
+msgstr ""
+
+#: includes/mp-ejemplos.php:198
+msgctxt "Submit a link"
+msgid "Post link"
+msgstr ""

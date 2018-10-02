@@ -13,7 +13,7 @@ class MP_Menu_Usersocial {
     
     public function options_page() {
         
-        $this->build_menupage->add_menu_page( 'Usersocial', 'User Social', 'manage_options', 'user_social', [$this, 'page_display_principal'], plugin_dir_url(__DIR__) . 'img/bezier-20-wp.svg', 15 );
+        $this->build_menupage->add_menu_page( 'Usersocial', __('User Social', 'miprimerplugin'), 'manage_options', 'user_social', [$this, 'page_display_principal'], plugin_dir_url(__DIR__) . 'img/bezier-20-wp.svg', 15 );
         
         $this->build_menupage->run();
         
@@ -41,7 +41,7 @@ class MP_Menu_Usersocial {
 				  		$output.="<option value='{$usuario->ID}'>{$usuario->display_name}</option>";
 				  }
 				  $output.="</select>
-							<p class='description'>Seleciona el usuario para cambiarle las redes sociales</p>                    
+							<p class='description'>".esc_html_e('Seleciona el usuario para cambiarle las redes sociales', 'miprimerplugin')."</p>                    
 						</td>
 					</tr>
 					<tr>

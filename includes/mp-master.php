@@ -25,6 +25,7 @@ class MP_Master {
 	protected $hearbeat;
 	
 	protected $online;//usamos para instanciar una clases que contiene metodos para almacenar el estado login o logout
+	protected $cron;
     
     public function __construct() {
         
@@ -33,6 +34,8 @@ class MP_Master {
         $this->plugin_dir_path = plugin_dir_path( __FILE__ );
         $this->plugin_dir_path_dir = plugin_dir_path( __DIR__ );
         $this->cargar_dependencias();
+		//cargamos todas las instancias
+		$this->cargar_instancias();
         $this->definir_admin_hooks();
         
     }
@@ -57,8 +60,16 @@ class MP_Master {
         require_once $this->plugin_dir_path . 'mp-ajax.php';
         require_once $this->plugin_dir_path . 'mp-hearbeat.php';
         require_once $this->plugin_dir_path . 'mp-online.php';
+		
+        require_once $this->plugin_dir_path . 'mp-widgets.php';
+        require_once $this->plugin_dir_path . 'mp-cron.php';
         
-        $this->cargador = new MP_cargador;
+    
+    }
+	
+	public function cargar_instancias(){
+		
+		$this->cargador = new MP_cargador;
         $this->admin = new MP_Admin($this->version);
         $this->cpt = new MP_CPT;
         $this->taxonomias = new MP_Taxonomias;
@@ -79,10 +90,17 @@ class MP_Master {
 		$this->heartbeat= new MP_Hearbeat;
 		
 		$this->online= new MP_Online;
+		
+		$this->online= new MP_Online;
+		
+		$this->cron = new MP_Cron;
 
-        
-    }
-    
+	}
+    /*Funciona para registrar widgets*/
+	public function registro_widget(){
+		register_widget('MP_Widget');
+		
+	}
     public function definir_admin_hooks() {
         
         // Cargando las taxonomías
@@ -147,7 +165,18 @@ class MP_Master {
 		$this->cargador->add_action( 'wp_login', $this->online, 'conectado', 10, 2 );
 		$this->cargador->add_action( 'wp_logout', $this->online, 'desconectado');
 		
-		$this->cargador->add_filter( 'heartbeat_received', $this->heartbeat, 'notificacion', 10, 3 );
+		$this->cargador->add_filter( 'heartbeat_received', $this->heartbeat, 'notificacion', 11, 3 );
+		
+		//agregar un Widget
+		$this->cargador->add_action( 'widgets_init', $this, 'registro_widget');
+		
+		
+		/*tareas programadas con WP_CRON*/
+		$this->cargador->add_filter( 'cron_schedules', $this->cron, 'intervalos' );
+		$this->cargador->add_action( 'init', $this->cron, 'inicializador' );
+		
+		//asociar al gancho la actividad a realizar con Cron
+		$this->cargador->add_action( 'mp_cron', $this->cron, 'evento1', 10, 2 );
     }
     
     public function run() {

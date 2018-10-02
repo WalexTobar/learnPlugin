@@ -49,6 +49,17 @@ class MP_Admin {
 				'current_user_id' 	=> get_current_user_id()//obtener el numero de id actual
 			]
 		);
+        /*traductor del archivo js*/
+        wp_localize_script(
+			'admin_script',//el nombre como se registro
+			'traductor',//el nombre del objeto
+			[
+				'guardaredes' => [
+                    'exito' => __('Ha guardado con éxito las redes sociales: ', 'miprimerplugin'),
+                    'error' => __('Ha ocurrido un error al guardar los datos ', 'miprimerplugin')
+                ]  				
+			]
+		);
 	}
     
 }
