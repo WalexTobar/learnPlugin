@@ -36,6 +36,7 @@ class MP_Master {
         $this->cargar_dependencias();
 		//cargamos todas las instancias
 		$this->cargar_instancias();
+		$this->set_idiomas();
         $this->definir_admin_hooks();
         
     }
@@ -64,6 +65,14 @@ class MP_Master {
         require_once $this->plugin_dir_path . 'mp-widgets.php';
         require_once $this->plugin_dir_path . 'mp-cron.php';
         
+        require_once $this->plugin_dir_path . 'mp-idiomas.php';
+        
+    
+    }
+    
+    public function set_idiomas(){
+        $mp_i18n = new MP_Idiomas();
+        $this->cargador->add_action('plugins_loaded',$mp_i18n, 'internacionalizar' );
     
     }
 	

@@ -18,6 +18,8 @@ if( ! function_exists('mp_install') ) {
     }    
 }
 
+define('REALPATH_BASENAME_PLUGIN', dirname(plugin_basename(__FILE__)));
+
 if( ! class_exists('MP_Mi_Class') ) {
     class MP_Mi_Class {
         
